@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/main_layout"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="@dimen/_10sdp"
+    android:layout_marginTop="@dimen/_2sdp"
+    android:layout_marginEnd="@dimen/_10sdp"
+    android:layout_marginBottom="@dimen/_2sdp"
+    android:clickable="true"
+    android:focusable="true"
+    android:orientation="vertical"
+    app:cardBackgroundColor="@color/colorPrimary"
+    app:cardCornerRadius="10dp"
+    app:cardElevation="@dimen/_8sdp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:clickable="false"
+        android:focusable="false"
+        android:gravity="center_vertical"
+        android:padding="10dp">
+
+        <ImageView
+            android:id="@+id/Tm_imageview"
+            android:layout_width="@dimen/_32sdp"
+            android:layout_height="@dimen/_32sdp"
+            android:layout_marginEnd="@dimen/_4sdp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/notifications_active" />
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="aaaaaaaaaaa"
+                android:textColor="@color/textColor"
+                android:textSize="@dimen/_14ssp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:alpha="0.6"
+                android:text="aaaaaaaaaaaa"
+                android:textColor="@color/textColor"
+                android:textSize="@dimen/_9ssp" />
+
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/gray" />
+</androidx.cardview.widget.CardView>

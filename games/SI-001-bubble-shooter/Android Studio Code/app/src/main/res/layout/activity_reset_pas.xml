@@ -1,0 +1,247 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_gravity="center"
+    android:background="@color/colorPrimaryDark"
+    android:gravity="center">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <ImageView
+            android:id="@+id/CircleImageViewImage"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_200sdp"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:contentDescription="@null"
+            android:scaleType="centerCrop"
+            android:src="@drawable/app_icon"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+        <TextView
+            android:id="@+id/titleText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:fontFamily="@font/worksansregular"
+            android:text="Forget Password  "
+            android:textColor="@color/white"
+            android:textSize="@dimen/_25sdp"
+            app:layout_constraintEnd_toEndOf="@+id/CircleImageViewImage"
+            app:layout_constraintStart_toStartOf="@+id/CircleImageViewImage"
+            app:layout_constraintTop_toBottomOf="@+id/CircleImageViewImage" />
+
+
+        <LinearLayout
+            android:id="@+id/linearLayout6"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_50sdp"
+            app:layout_constraintTop_toBottomOf="@+id/titleText">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/type_number_option"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_40sdp"
+                android:layout_marginStart="@dimen/_20sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:layout_marginEnd="@dimen/_20sdp"
+                android:background="@drawable/sign_up_shape"
+                android:backgroundTint="@color/new_color"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/gender_radio_group_option">
+
+
+                <com.hbb20.CountryCodePicker
+                    android:id="@+id/ccp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="@dimen/_5sdp"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    app:ccpDialog_showCloseIcon="false"
+                    app:ccpDialog_textColor="@color/white"
+                    app:ccp_arrowColor="@color/white"
+                    app:ccp_autoDetectCountry="true"
+                    app:ccp_contentColor="@color/white"
+                    app:ccp_flagBorderColor="@color/white"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <EditText
+                    android:id="@+id/mobile_number"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:background="#00000000"
+                    android:elevation="@dimen/_3sdp"
+                    android:ems="10"
+                    android:textColorLink="@color/white"
+                    android:hint="Mobile Number"
+                    android:inputType="number"
+                    android:singleLine="true"
+                    android:textColor="@color/white"
+                    android:textColorHint="@color/white"
+                    android:textSize="@dimen/_11ssp"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/ccp"
+                    app:layout_constraintTop_toTopOf="@+id/ccp" />
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:id="@+id/CheckBtn"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_40sdp"
+            android:layout_marginTop="@dimen/_40sdp"
+            android:background="@drawable/sign_up_shape_1"
+            android:backgroundTint="@color/new_color"
+            android:orientation="horizontal"
+            app:layout_constraintTop_toBottomOf="@+id/linearLayout6">
+
+            <TextView
+                android:id="@+id/textApp"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:fontFamily="@font/bold"
+                android:gravity="center"
+                android:text="Check User"
+                android:textColor="@color/textColor"
+                android:textSize="@dimen/_12ssp" />
+
+        </LinearLayout>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/otpLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#DC1B1B1B"
+        android:clickable="true"
+        android:orientation="vertical"
+        android:paddingBottom="@dimen/_20sdp"
+        android:visibility="gone">
+
+        <ImageView
+            android:id="@+id/forgotCloseBtn"
+            android:layout_width="@dimen/_25sdp"
+            android:layout_height="@dimen/_25sdp"
+            android:layout_margin="@dimen/_5sdp"
+            android:background="@drawable/bg_round"
+            android:elevation="@dimen/_5sdp"
+            android:src="@drawable/ic_cross"
+            app:backgroundTint="#FF835D"
+            app:layout_constraintEnd_toEndOf="@+id/otpCardLayout"
+            app:layout_constraintTop_toTopOf="@+id/otpCardLayout"
+            app:tint="@color/white" />
+
+        <LinearLayout
+            android:id="@+id/otpCardLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_margin="@dimen/_15sdp"
+            android:background="@drawable/et_bg"
+            android:backgroundTint="@color/New_color1"
+            android:orientation="vertical"
+            android:padding="@dimen/_10sdp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:layout_editor_absoluteX="19dp">
+
+            <TextView
+                android:id="@+id/titleID"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_10sdp"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:text="OTP Verification"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_18ssp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/titleID2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_10sdp"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:text="OTP Code"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_14ssp"
+                android:textStyle="normal" />
+
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <EditText
+                    android:id="@+id/verify_code"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/_10sdp"
+                    android:layout_marginTop="@dimen/_2sdp"
+                    android:layout_marginRight="@dimen/_10sdp"
+                    android:background="@drawable/et_bg"
+                    android:backgroundTint="@color/white"
+                    android:hint="Type Otp"
+                    android:inputType="textPassword"
+                    android:padding="@dimen/_12sdp"
+                    android:textColor="@color/black"
+                    android:textColorHint="#aaaaaa"
+                    android:textSize="@dimen/_12ssp" />
+
+                <CheckBox
+                    android:id="@+id/cbShowPwd"
+                    android:layout_width="25dp"
+                    android:layout_height="20dp"
+                    android:layout_gravity="right|center"
+                    android:layout_marginRight="@dimen/_20sdp"
+                    android:background="@drawable/ic_not_see"
+                    android:button="@null"
+                    android:elevation="5dp"
+                    app:backgroundTint="@color/black" />
+            </FrameLayout>
+
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/subMit"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_10sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:layout_marginRight="@dimen/_10sdp"
+                android:background="@drawable/btn_bg"
+                android:backgroundTint="#FF835D"
+                android:inputType="text"
+                android:maxLines="1"
+                android:text="Check"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</RelativeLayout>

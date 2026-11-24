@@ -1,0 +1,86 @@
+apply plugin: 'com.android.application'
+apply plugin: 'com.google.gms.google-services'
+apply plugin: 'com.onesignal.androidsdk.onesignal-gradle-plugin'
+
+android {
+    namespace 'com.burhanstore.bubblereward'
+    compileSdkVersion 33
+    defaultConfig {
+        applicationId "com.burhanstore.bubblereward"
+        minSdkVersion 21
+        targetSdkVersion 33
+        versionCode 2
+        versionName "1.0.1"
+
+        multiDexEnabled true
+
+        manifestPlaceholders = [
+                // Project number pulled from dashboard, local value is ignored.
+                onesignal_google_project_number: 'REMOTE'
+        ]
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility = JavaVersion.VERSION_1_8
+        targetCompatibility = JavaVersion.VERSION_1_8
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: "libs", include: ["*.jar"])
+    implementation 'androidx.appcompat:appcompat:1.6.1'
+    implementation 'com.google.android.gms:play-services-ads:22.3.0'
+    implementation 'androidx.cardview:cardview:1.0.0'
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+    implementation 'com.google.android.material:material:1.9.0'
+    implementation "androidx.cardview:cardview:1.0.0"
+    implementation 'androidx.appcompat:appcompat:1.6.1'
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
+    implementation 'androidx.recyclerview:recyclerview:1.3.1'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.5'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
+    testImplementation 'junit:junit:4.13.2'
+    implementation 'com.android.volley:volley:1.2.1'
+    implementation 'com.google.code.gson:gson:2.8.9'
+    implementation 'com.intuit.sdp:sdp-android:1.1.0'
+    implementation 'com.github.bumptech.glide:glide:4.13.2'
+    annotationProcessor 'com.github.bumptech.glide:compiler:4.12.0'
+    implementation 'com.facebook.shimmer:shimmer:0.5.0@aar'
+    implementation 'de.hdodenhof:circleimageview:3.1.0'
+    implementation 'com.hbb20:ccp:2.5.1'
+    implementation "com.airbnb.android:lottie:5.2.0"
+    implementation 'com.squareup.okhttp3:okhttp:5.0.0-alpha.2'
+    implementation 'com.squareup.picasso:picasso:2.71828'
+    implementation 'com.google.android.play:core:1.10.3'
+    implementation 'in.codeshuffle.scratchcardlayout:ScratchCardLayout:1.0.8'
+    implementation 'com.makeramen:roundedimageview:2.3.0'
+    implementation 'com.intuit.ssp:ssp-android:1.1.0'
+    implementation 'com.google.android.gms:play-services-auth:20.6.0'
+    implementation 'com.google.firebase:firebase-auth:22.1.1'
+
+    //Video Ads
+    implementation 'com.vungle:publisher-sdk-android:6.12.1'
+    implementation 'com.unity3d.ads:unity-ads:4.7.0'
+    implementation "com.applovin:applovin-sdk:+"
+    implementation 'com.adcolony:sdk:4.8.0'
+    implementation 'com.facebook.android:audience-network-sdk:6.1.0'
+    implementation 'com.startapp:inapp-sdk:4.10.7'
+
+    implementation 'com.ironsource.sdk:mediationsdk:7.1.1'
+    implementation 'com.google.ads.mediation:facebook:5.9.0.1'
+
+    implementation 'com.squareup.retrofit2:retrofit:2.9.0'
+    implementation 'com.squareup.retrofit2:converter-gson:2.9.0'
+
+
+    implementation 'com.onesignal:OneSignal:[4.0.0, 4.99.99]'
+    //Add Library to your Project by TechHalf.net
+    implementation 'com.github.akshaaatt:Google-IAP:1.2.5'
+
+}

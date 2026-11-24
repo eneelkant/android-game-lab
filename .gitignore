@@ -1,0 +1,19 @@
+# Android and Gradle generated files
+**/.gradle/
+**/build/
+**/local.properties
+**/.idea/
+**/app/release/
+*.apk
+*.aab
+
+# Machine or service configuration and local data
+**/google-services.json
+**/database.sql
+**/used_purchase_codes.txt
+**/error_log
+
+# Archive metadata and duplicated source packages
+.DS_Store
+**/__MACOSX/
+**/*.zip

@@ -1,0 +1,358 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimaryDark">
+
+
+    <RelativeLayout
+        android:id="@+id/Main_section"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintBottom_toTopOf="@+id/adView">
+
+        <WebView
+            android:id="@+id/webView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="18dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="1.0" />
+
+        <RelativeLayout
+            android:id="@+id/rel1"
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            android:background="@color/colorPrimary"
+            android:gravity="center">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/text2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_above="@+id/text1"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginBottom="-20dp"
+                    android:fontFamily="@font/inter_bold"
+                    android:letterSpacing="-0.04"
+                    android:lineSpacingExtra="11sp"
+                    android:text="b"
+                    android:textColor="#6765ff"
+                    android:textSize="26dp" />
+
+                <TextView
+                    android:id="@+id/text1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="2dp"
+                    android:fontFamily="@font/inter_bold"
+                    android:letterSpacing="-0.04"
+                    android:lineSpacingExtra="11sp"
+                    android:text="Reward"
+                    android:textColor="#f9cd1d"
+                    android:textSize="28dp" />
+
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:id="@+id/points_layout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp">
+
+                <RelativeLayout
+                    android:id="@+id/bell"
+                    android:layout_width="60dp"
+                    android:layout_height="50dp"
+                    android:layout_toStartOf="@+id/points_layout"
+                    android:clickable="true"
+                    android:orientation="horizontal"
+                    android:paddingLeft="5dp"
+                    android:paddingRight="5dp">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_marginRight="-10dp"
+                        android:paddingVertical="12dp"
+                        android:src="@drawable/notification" />
+
+                    <TextView
+                        android:id="@+id/badge"
+                        android:layout_width="@dimen/dimen_16dp"
+                        android:layout_height="@dimen/dimen_16dp"
+                        android:layout_gravity="end"
+                        android:layout_marginLeft="11dp"
+                        android:layout_marginTop="11dp"
+                        android:background="@drawable/badge"
+                        android:gravity="center"
+                        android:text="3"
+                        android:textColor="@color/white"
+                        android:textSize="11dp" />
+
+                </RelativeLayout>
+
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <ImageView
+                        android:id="@+id/ProfileBtn"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_marginLeft="2dp"
+                        android:layout_marginRight="2dp"
+                        android:layout_marginBottom="4.0dip"
+                        android:src="@drawable/ic_profile"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintHorizontal_bias="0.5"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:tint="#6765ff" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <ImageView
+                        android:id="@+id/LeaderBtn"
+                        android:layout_width="28dp"
+                        android:layout_height="28dp"
+                        android:layout_marginBottom="4.0dip"
+                        android:src="@drawable/icon_leaderboard"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintHorizontal_bias="0.5"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:tint="#6765ff" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="8.0dip"
+                    android:background="@drawable/background_coins"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <ImageView
+                        android:id="@+id/imageView12"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_marginStart="8.0dip"
+                        android:layout_marginTop="4.0dip"
+                        android:layout_marginBottom="4.0dip"
+                        android:src="@drawable/ic_coin_24"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toStartOf="@id/user_points_text_view"
+                        app:layout_constraintHorizontal_bias="0.5"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/user_points_text_view"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="4.0dip"
+                        android:layout_marginEnd="8.0dip"
+                        android:fontFamily="@font/poppins_semibold"
+                        android:text="200"
+                        android:textColor="@color/white"
+                        android:textSize="12.0sp"
+                        android:textStyle="bold"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.5"
+                        app:layout_constraintStart_toEndOf="@id/imageView12"
+                        app:layout_constraintTop_toTopOf="parent" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+            </LinearLayout>
+
+
+        </RelativeLayout>
+
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/ExitDialog"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#80000000"
+        android:orientation="vertical"
+        android:visibility="gone">
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardBottom"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_marginStart="30dp"
+            android:layout_marginEnd="30dp"
+            app:cardBackgroundColor="@color/colorPrimaryDark"
+            app:cardCornerRadius="30dp"
+            card_view:cardPreventCornerOverlap="true">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="42dp"
+                android:orientation="vertical">
+
+                <!--Title & Description-->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="12dp"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:visibility="visible">
+
+                    <TextView
+                        android:id="@+id/title_text_points"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/public_semibold"
+                        android:gravity="center"
+                        android:maxLines="5"
+                        android:singleLine="false"
+                        android:text="Congratulation"
+                        android:textAllCaps="false"
+                        android:textColor="@color/black"
+                        android:textSize="15sp"
+                        android:visibility="visible" />
+
+                    <TextView
+                        android:id="@+id/points"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:fontFamily="@font/public_medium"
+                        android:gravity="center"
+                        android:singleLine="false"
+                        android:text="text"
+                        android:textAllCaps="false"
+                        android:textColor="@color/black"
+                        android:textSize="14dp"
+                        android:visibility="visible" />
+
+                </LinearLayout>
+
+                <!--Done & Cancel buttons-->
+                <LinearLayout
+                    android:id="@+id/lyDoneCancel"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:visibility="visible">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:layout_marginBottom="@dimen/_4sdp"
+                        android:gravity="center"
+                        android:orientation="horizontal">
+
+                        <androidx.appcompat.widget.AppCompatButton
+                            android:id="@+id/cancel_btn"
+                            android:layout_width="@dimen/_100sdp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_margin="@dimen/_4sdp"
+                            android:background="@drawable/btn_bg_today_dialog"
+                            android:text="@string/cancel_text"
+                            android:textAllCaps="false"
+                            android:textColor="@color/white"
+                            android:visibility="gone" />
+
+                        <androidx.appcompat.widget.AppCompatButton
+                            android:id="@+id/add_btn"
+                            android:layout_width="@dimen/_100sdp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_margin="@dimen/_4sdp"
+                            android:background="@drawable/btn_bg_today_dialog"
+                            android:elevation="10dp"
+                            android:text="@string/account_add_to_wallet"
+                            android:textAllCaps="false"
+                            android:textColor="@color/white" />
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_above="@+id/cardBottom"
+            android:layout_centerInParent="true"
+            android:layout_marginBottom="-40dp"
+            app:cardBackgroundColor="@color/white"
+            app:cardElevation="5dp"
+            card_view:cardCornerRadius="40dp"
+            card_view:cardPreventCornerOverlap="true">
+
+            <com.makeramen.roundedimageview.RoundedImageView
+                android:id="@+id/rivDialog"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:layout_margin="8dp"
+                android:src="@drawable/app_icon"
+                android:visibility="visible"
+                app:riv_oval="true" />
+
+        </androidx.cardview.widget.CardView>
+
+    </RelativeLayout>
+
+    <com.google.android.gms.ads.AdView
+        android:id="@+id/adView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        app:adSize="BANNER"
+        app:adUnitId="ca-app-pub-3940256099942544/6300978111"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+</RelativeLayout>
